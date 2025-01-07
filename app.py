@@ -9,16 +9,17 @@ import time
 # Set the page configuration (must be the first Streamlit command)
 st.set_page_config(page_title="PDF to Audiobook Converter", layout="centered")
 
-# Custom CSS for styling
+# Custom CSS for dark mode
 st.markdown("""
     <style>
         /* General Page Styles */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f5f7fa;
+            background-color: #1e1e1e; /* Dark background */
+            color: #ffffff; /* Light text */
         }
         .stButton button {
-            background-color: #4CAF50;
+            background-color: #6200ea; /* Purple button */
             color: white;
             border: none;
             border-radius: 5px;
@@ -27,25 +28,37 @@ st.markdown("""
             font-weight: bold;
         }
         .stButton button:hover {
-            background-color: #45a049;
+            background-color: #3700b3; /* Darker purple on hover */
         }
         .stSidebar {
-            background-color: #f5f7fa;
+            background-color: #2c2c2c; /* Darker sidebar */
+            color: white;
+        }
+        .stSidebar div {
+            color: white;
         }
         footer {
             text-align: center;
             font-size: 0.8rem;
+            color: #cccccc; /* Lighter text for footer */
         }
         footer a {
-            color: #007BFF;
+            color: #bb86fc; /* Accent color */
             text-decoration: none;
+        }
+        textarea {
+            background-color: #2c2c2c !important;
+            color: #ffffff !important;
+        }
+        .stProgress > div > div {
+            background-color: #bb86fc; /* Accent progress bar */
         }
     </style>
 """, unsafe_allow_html=True)
 
 # Application title
-st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🎧 PDF to Audiobook Converter</h1>", unsafe_allow_html=True)
-st.write("<p style='text-align: center;'>Transform your PDFs into high-quality audiobooks with ease!</p>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #bb86fc;'>🎧 PDF to Audiobook Converter</h1>", unsafe_allow_html=True)
+st.write("<p style='text-align: center; color: #cccccc;'>Transform your PDFs into high-quality audiobooks with ease!</p>", unsafe_allow_html=True)
 
 # Sidebar for customization options
 st.sidebar.header("📊 Customization Settings")
