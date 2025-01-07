@@ -3,4 +3,3 @@ streamlit
 PyPDF2
 gtts
 pyttsx3
-eSpeak
